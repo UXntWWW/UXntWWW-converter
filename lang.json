@@ -1,0 +1,28 @@
+{
+  "ru": {
+    "h1": "Конвертер изображений",
+    "subtitle": "Смена формата и разрешения прямо в браузере. Файлы не загружаются на сервер.",
+    "dropTitle": "Перетащите файлы сюда",
+    "dropSub": "или нажмите, чтобы выбрать",
+    "formatLabel": "Формат на выходе",
+    "qualityLabel": "Качество",
+    "sizeLabel": "Размер",
+    "keepRatio": "Сохранить пропорции",
+    "convert": "Конвертировать",
+    "clear": "Очистить",
+    "downloadAll": "Скачать все"
+  },
+  "en": {
+    "h1": "Image Converter",
+    "subtitle": "Change format and resolution right in your browser. Files are never uploaded.",
+    "dropTitle": "Drop files here",
+    "dropSub": "or click to choose",
+    "formatLabel": "Output format",
+    "qualityLabel": "Quality",
+    "sizeLabel": "Size",
+    "keepRatio": "Keep aspect ratio",
+    "convert": "Convert",
+    "clear": "Clear",
+    "downloadAll": "Download all"
+  }
+}
