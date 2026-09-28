@@ -406,7 +406,7 @@ function convertAll() {
     convertBtn = document.getElementById('convert-btn');
     clearBtn = document.getElementById('clear-btn');
     downloadAllBtn = document.getElementById('download-all');
-    preloader = document.getElementById('preloader');
+    preloader = document.getElementById('preloader') || { hidden: true };
     themeBtn = document.getElementById('theme-btn');
     langBtn = document.getElementById('lang-btn');
 
