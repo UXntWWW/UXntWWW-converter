@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Converter — UXNTWWW</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-mark">UX</span>
+      <span class="logo-text">Image Converter</span>
+    </div>
+    <div class="controls">
+      <button class="icon-btn" id="theme-btn" type="button" aria-label="Theme"></button>
+      <button class="icon-btn" id="lang-btn" type="button" aria-label="Language">RU</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <h1 class="hero-title" data-i18n="h1">Конвертер изображений</h1>
+    <p class="hero-text" data-i18n="subtitle">Смена формата и разрешения прямо в браузере. Файлы не загружаются на сервер.</p>
+  </section>
+
+  <section class="dropzone" id="dropzone">
+    <div class="dropzone-inner">
+      <div class="dropzone-icon"></div>
+      <div class="dropzone-title" data-i18n="dropTitle">Перетащите файлы сюда</div>
+      <div class="dropzone-sub" data-i18n="dropSub">или нажмите, чтобы выбрать</div>
+      <div class="dropzone-formats">PNG · JPG · WebP · ICO · BMP · GIF · AVIF · SVG</div>
+    </div>
+    <input type="file" id="file-input" accept="image/*" multiple hidden>
+  </section>
+
+  <section class="settings" id="settings" hidden>
+    <div class="settings-row">
+      <div class="setting">
+        <label class="setting-label" data-i18n="formatLabel">Формат на выходе</label>
+        <div class="format-grid" id="format-grid">
+          <button class="format-btn active" type="button" data-format="png">PNG</button>
+          <button class="format-btn" type="button" data-format="jpeg">JPG</button>
+          <button class="format-btn" type="button" data-format="webp">WebP</button>
+          <button class="format-btn" type="button" data-format="ico">ICO</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-row">
+      <div class="setting">
+        <label class="setting-label" data-i18n="qualityLabel">Качество</label>
+        <div class="slider-wrap">
+          <input type="range" id="quality" min="10" max="100" value="92">
+          <span class="slider-value" id="quality-value">92</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-row">
+      <div class="setting">
+        <label class="setting-label" data-i18n="sizeLabel">Размер</label>
+        <div class="size-row">
+          <input type="number" id="width" min="1" placeholder="Ширина">
+          <span class="size-x">×</span>
+          <input type="number" id="height" min="1" placeholder="Высота">
+        </div>
+        <label class="checkbox">
+          <input type="checkbox" id="keep-ratio" checked>
+          <span data-i18n="keepRatio">Сохранить пропорции</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <section class="files" id="files"></section>
+
+  <section class="actions" id="actions" hidden>
+    <button class="btn btn-primary" id="convert-btn" type="button" data-i18n="convert">Конвертировать</button>
+    <button class="btn btn-secondary" id="clear-btn" type="button" data-i18n="clear">Очистить</button>
+  </section>
+
+  <section class="download" id="download" hidden>
+    <button class="btn btn-success" id="download-all" type="button" data-i18n="downloadAll">Скачать все</button>
+  </section>
+
+</main>
+
+<div class="preloader" id="preloader" hidden>
+  <div class="preloader-ring"></div>
+</div>
+
+<footer class="footer">
+  <span>2026 · <a href="https://uxntwww.github.io">UXNTWWW</a></span>
+</footer>
+
+<script src="ico.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
