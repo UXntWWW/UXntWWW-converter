@@ -225,21 +225,35 @@
 
   // ==== Конвертация ====
 
-  function convertAll() {
-    if (!items.length) return;
+function convertAll() {
+  if (!items.length) return;
 
-    var fmt = currentFormat();
-    var quality = parseInt(qualityInput.value, 10) / 100;
-    var w = parseInt(widthInput.value, 10) || 0;
-    var h = parseInt(heightInput.value, 10) || 0;
+  var fmt = currentFormat();
+  var quality = parseInt(qualityInput.value, 10) / 100;
+  var w = parseInt(widthInput.value, 10) || 0;
+  var h = parseInt(heightInput.value, 10) || 0;
 
-    showPreloader(true);
-    convertBtn.disabled = true;
+  showPreloader(true);
+  convertBtn.disabled = true;
 
-    var tasks = items.map(function (it) {
-      return convertOne(it, fmt, quality, w, h);
+  var tasks = items.map(function (it) {
+    return convertOne(it, fmt, quality, w, h).catch(function (err) {
+      console.error('Convert error:', err);
+      it.status = 'err';
+      it.blob = null;
     });
+  });
 
+  Promise.all(tasks).then(function () {
+    showPreloader(false);
+    convertBtn.disabled = false;
+    renderFiles();
+  }).catch(function (err) {
+    console.error('All error:', err);
+    showPreloader(false);
+    convertBtn.disabled = false;
+  });
+}
     Promise.all(tasks).then(function () {
       showPreloader(false);
       convertBtn.disabled = false;
