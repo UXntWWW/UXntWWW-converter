@@ -527,3 +527,7 @@ body {
   .size-x { display: none; }
   .size-row input { width: 100%; }
 }
+
+.preloader[hidden] {
+  display: none !important;
+}
