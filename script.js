@@ -254,13 +254,6 @@ function convertAll() {
     convertBtn.disabled = false;
   });
 }
-    Promise.all(tasks).then(function () {
-      showPreloader(false);
-      convertBtn.disabled = false;
-      renderFiles();
-    });
-  }
-
   function convertOne(it, fmt, quality, maxW, maxH) {
     return loadImage(it.file).then(function (img) {
       // Размеры
